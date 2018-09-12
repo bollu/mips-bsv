@@ -26,6 +26,21 @@ talking about, so please take this with mountains of salt.
 - Multi cycle + pipelining [ ]
 - Memory module [ ]
 
+
+## Conjectures that are probably wrong
+- Can you use some polyhedral `$magic` to optimise dataflow representations?
+After all, the entire point of a polyhedral representation is to have succinct
+representations of data access. So, rather than having to suffer through the
+tagging + staging of the MIT architecture, can using a "compact" representation
+help? 
+
+- Clearly, SSA can be (for the most part) directly translated to a dataflow
+  processor. Can we somehow leverage insights gained by [SSI (static single
+  information)](https://pdfs.semanticscholar.org/d68e/b3e274bfaf6c194fb2bdf44a1d64c7b89f8c.pdf)
+  to design better dataflow processors? Eg. SSI guarantees that the information
+  you are currently tracking is per-variable. So, what information is
+  interesting during *execution time*? 
+
 ## References
 ### Simple processor design
 - [Computer Architecture, a Constructive Approach (pdf)](./reading/computer-arch-a-constructive-approach.pdf)
